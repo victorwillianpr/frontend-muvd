@@ -20,7 +20,7 @@ function MovieList() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post('http://localhost:3001/api/moviecategory', { query })
+      .post('https://backend-muvd.vercel.app/api/moviecategory', { query })
       .then((response) => {
         setResultado(response.data);
         setLoading(false);
@@ -35,7 +35,7 @@ function MovieList() {
     setPage(page+1);
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:3001/api/moremoviecategory', { query, page: page+1, })
+      const response = await axios.post('https://backend-muvd.vercel.app/api/moviecategory', { query, page: page+1, })
     ;
       setResultado([...resultado, ...response.data]);
       setLoading(false);
@@ -49,7 +49,7 @@ function MovieList() {
   const fetchPopularMovies = async () => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:3001/api/popularmovies', {
+      const response = await axios.post('https://backend-muvd.vercel.app/api/moviecategory', {
       page: page,
     });
       setResultado([...resultado, ...response.data]);

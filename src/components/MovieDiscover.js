@@ -12,7 +12,7 @@ function MovieList() {
   const fetchPopularMovies = async () => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:3001/api/popularmovies', {
+      const response = await axios.post('https://backend-muvd.vercel.app/api/popularmovies', {
       page: page,
     });
       setResultado([...resultado, ...response.data]);

@@ -16,7 +16,7 @@ function MovieList() {
     event.preventDefault();
 
     axios
-      .post('http://localhost:3001/api/moviesearch', { query })
+      .post('https://backend-muvd.vercel.app/api/moviesearch', { query })
       .then((response) => {
         setResultado(response.data); // Resultado é um array de objetos com title, overview e poster
       })
